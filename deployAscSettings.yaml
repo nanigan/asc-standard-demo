@@ -33,12 +33,8 @@ jobs:
           enable-AzPSSession: true
 
     - name: Azure PowerShell Action
-      uses: Azure/powershell@v1
-      with:
-        inlineScript: 
-          New-AzResourceGroupDeployment -Name ExampleDeployment2 -ResourceGroupName RG-DEMO-RESOURCES -TemplateFile ASC-Settings\azuredeploy.json -TemplateParameterFile ASC-Settings\azuredeploy.parameters.json
-        azPSVersion: 
-          latest
+      shell: pwsh
+      run: |
+        .\deployToSub.ps1
         failOnStandardError: false
-      # Used to pull Az module from Azure/az-ps-module-versions.  Since there's a default, this is typically not supplied by the user.
         githubToken: ${{ github.token }}

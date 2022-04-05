@@ -1,9 +1,6 @@
 New-AzSubscriptionDeployment `
   -Name deploypricings `
   -Location eastus2 `
-  -TemplateUri "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/emptyrg.json" `
-  -rgName demoResourceGroup `
-  -rgLocation centralus
-
-
-  https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/emptyrg.json
+  -TemplateUri "https://raw.githubusercontent.com/nanigan/asc-standard-demo/main/ASC-Settings/azuredeploy.json" `
+  -rgName RG-DEMO-RESOURCES-TEST `
+  -rgLocation eastus2
