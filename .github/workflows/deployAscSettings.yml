@@ -39,7 +39,6 @@ jobs:
           Install-Module -Name "Az.Security" -Force -AllowClobber
         azPSVersion: 
           latest
-        failOnStandardError: false
 
     - name: Azure PowerShell Action
       shell: pwsh
