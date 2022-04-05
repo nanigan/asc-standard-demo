@@ -1,0 +1,35 @@
+{
+ "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "pricingTierVMs": {
+            "type": "string",
+            "defaultValue": "Standard"
+        },
+        "pricing": {
+            "type": "string",
+            "defaultValue": "Standard"
+
+        }
+    },
+    "resources": [
+                {
+            "type": "Microsoft.Security/pricings",
+            "apiVersion": "2017-08-01-preview",
+            "name": "default",
+            "properties":{
+                "pricingTier": "[parameters('pricing')]"
+            }
+        },
+        {
+            "type": "Microsoft.Security/pricings",
+            "apiVersion": "2017-08-01-preview",
+            "name": "VirtualMachines",
+            "properties":{
+                "pricingTier": "[parameters('pricingTierVMs')]"
+            }
+        }      
+        
+    ],
+    "outputs": {}
+}
