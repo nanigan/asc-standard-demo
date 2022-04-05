@@ -43,4 +43,4 @@ jobs:
     - name: Azure PowerShell Action
       shell: pwsh
       run: |
-        .\deployToSub.ps1
+        .\ASC-Settings\deployToSub.ps1

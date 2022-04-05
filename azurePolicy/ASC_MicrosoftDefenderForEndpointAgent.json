@@ -30,7 +30,7 @@
       "name": "[parameters('policyAssignmentName')]",
       "apiVersion": "2019-09-01",
       "properties": {
-        "scope": "/",
+        "scope": "/subscriptions/805b1035-89ad-44e4-9f1d-d27d67305a2b",
         "policyDefinitions": [
           {
             "policyDefinitionReferenceId": "microsoftDefenderForEndpointWindowsAgentDeploy",
