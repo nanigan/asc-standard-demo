@@ -28,9 +28,10 @@
     {
       "type": "Microsoft.Authorization/policyAssignments",
       "name": "[parameters('policyAssignmentName')]",
+      "location": "eastus2",
       "apiVersion": "2019-09-01",
       "properties": {
-        "scope": "/subscriptions/805b1035-89ad-44e4-9f1d-d27d67305a2b",
+        "scope": "[subscription().id]",
         "policyDefinitions": [
           {
             "policyDefinitionReferenceId": "microsoftDefenderForEndpointWindowsAgentDeploy",
