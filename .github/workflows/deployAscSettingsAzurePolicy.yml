@@ -36,7 +36,7 @@ jobs:
       uses: azure/manage-azure-policy@v0
       with:
         paths: |
-          initiatives/_Preview_Deploy_Microsoft_Defender_for_Endpoint_agent_e20d08c5-6d64-656d-6465-ce9e37fd0ebc/**
+          azurePolicy/**
 
     # - name: Azure PowerShell Action
     #   uses: Azure/powershell@v1
