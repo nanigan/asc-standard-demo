@@ -1,4 +1,6 @@
 {
+  "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
     "properties": {
       "displayName": "[Preview]: Deploy Microsoft Defender for Endpoint agent",
       "policyType": "BuiltIn",

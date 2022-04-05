@@ -32,15 +32,21 @@ jobs:
           creds: '${{ secrets.AZURE_CREDENTIALS }}'
           enable-AzPSSession: true
 
-    - name: Azure PowerShell Action
-      uses: Azure/powershell@v1
+    - name: Create or Update Azure Policies
+      uses: azure/manage-azure-policy@v0
       with:
-        inlineScript: 
-          Install-Module -Name "Az.Resources" -Force -AllowClobber
-        azPSVersion: 
-          latest
+        paths: |
+          initiatives/_Preview_Deploy_Microsoft_Defender_for_Endpoint_agent_e20d08c5-6d64-656d-6465-ce9e37fd0ebc/**
 
-    - name: Azure PowerShell Action
-      shell: pwsh
-      run: |
-        .\azurePolicy\deployToSub.ps1
+    # - name: Azure PowerShell Action
+    #   uses: Azure/powershell@v1
+    #   with:
+    #     inlineScript: 
+    #       Install-Module -Name "Az.Resources" -Force -AllowClobber
+    #     azPSVersion: 
+    #       latest
+
+    # - name: Azure PowerShell Action
+    #   shell: pwsh
+    #   run: |
+    #     .\azurePolicy\deployToSub.ps1
