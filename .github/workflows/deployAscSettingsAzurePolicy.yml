@@ -35,4 +35,4 @@ jobs:
     - name: Azure PowerShell Action
       shell: pwsh
       run: |
-        azurePolicy\deployToSub.ps1
+        .\azurePolicy\deployToSub.ps1
