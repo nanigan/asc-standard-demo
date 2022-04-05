@@ -33,6 +33,15 @@ jobs:
           enable-AzPSSession: true
 
     - name: Azure PowerShell Action
+      uses: Azure/powershell@v1
+      with:
+        inlineScript: 
+          Install-Module -Name "Az.Resources" -Force -AllowClobber
+        azPSVersion: 
+          latest
+        failOnStandardError: false
+
+    - name: Azure PowerShell Action
       shell: pwsh
       run: |
         .\deployToSub.ps1
