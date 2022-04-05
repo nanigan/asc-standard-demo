@@ -1,1 +1,1 @@
-New-AzDeployment -Location "eastus2" -TemplateFile "ASC-Settings/azuredeploy.json"
+Set-AzSecurityPricing -Name "virtualmachines" -PricingTier "Standard"
