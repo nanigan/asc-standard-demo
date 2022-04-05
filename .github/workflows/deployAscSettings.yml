@@ -44,5 +44,4 @@ jobs:
       shell: pwsh
       run: |
         .\deployToSub.ps1
-        failOnStandardError: false
         githubToken: ${{ github.token }}
