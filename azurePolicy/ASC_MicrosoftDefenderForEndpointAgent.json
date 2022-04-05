@@ -1,5 +1,4 @@
 {
-  "kind": "template",
     "properties": {
       "displayName": "[Preview]: Deploy Microsoft Defender for Endpoint agent",
       "policyType": "BuiltIn",
