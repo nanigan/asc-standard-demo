@@ -1,0 +1,76 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "microsoftDefenderForEndpointWindowsVmAgentDeployEffect": {
+      "type": "string",
+      "defaultValue": "DeployIfNotExists"
+    },
+    "microsoftDefenderForEndpointLinuxVmAgentDeployEffect": {
+      "type": "string",
+      "defaultValue": "DeployIfNotExists"
+    },
+    "microsoftDefenderForEndpointWindowsArcAgentDeployEffect": {
+      "type": "string",
+      "defaultValue": "DeployIfNotExists"
+    },
+    "microsoftDefenderForEndpointLinuxArcAgentDeployEffect": {
+      "type": "string",
+      "defaultValue": "DeployIfNotExists"
+    },
+    "policyAssignmentName": {
+      "type": "string",
+      "defaultValue": "shanetestassignment"
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "[parameters('policyAssignmentName')]",
+      "location": "eastus2",
+      "apiVersion": "2019-09-01",
+      "properties": {
+        "scope": "[subscription().id]",
+        "policyDefinitions": [
+          {
+            "policyDefinitionReferenceId": "microsoftDefenderForEndpointWindowsAgentDeploy",
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1ec9c2c2-6d64-656d-6465-3ec3309b8579",
+            "parameters": {
+              "effect": {
+                "value": "[parameters('microsoftDefenderForEndpointWindowsVmAgentDeployEffect')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionReferenceId": "microsoftDefenderForEndpointLinuxAgentDeploy",
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/d30025d0-6d64-656d-6465-67688881b632",
+            "parameters": {
+              "effect": {
+                "value": "[parameters('microsoftDefenderForEndpointLinuxVmAgentDeployEffect')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionReferenceId": "microsoftDefenderForEndpointWindowsArcAgentDeploy",
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/37c043a6-6d64-656d-6465-b362dfeb354a",
+            "parameters": {
+              "effect": {
+                "value": "[parameters('microsoftDefenderForEndpointWindowsArcAgentDeployEffect')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionReferenceId": "microsoftDefenderForEndpointLinuxArcAgentDeploy",
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/4eb909e7-6d64-656d-6465-2eeb297a1625",
+            "parameters": {
+              "effect": {
+                "value": "[parameters('microsoftDefenderForEndpointLinuxArcAgentDeployEffect')]"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
