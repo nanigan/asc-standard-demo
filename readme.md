@@ -2,11 +2,19 @@
 
 This repository includes the tools and documentation to use automation to manage your enterprise Microsoft Defender feature enablement.
 
-[![DeployASCPricingUsingPowerShell](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsPowerShell.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsPowerShell.yml)
+[![DeployASCPricingPolicyInitiative](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsAzurePolicySet.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsAzurePolicySet.yml)
 
 [![DeployASCPricingUsingARM](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsARM.yaml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsARM.yaml)
 
-[![manage-azure-policy-fd93d1f1](https://github.com/nanigan/asc-standard-demo/actions/workflows/manage-azure-policy-fd93d1f1.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/manage-azure-policy-fd93d1f1.yml)
+[![DeployASCPricingUsingPowerShell](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsPowerShell.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsPowerShell.yml)
+
+[![deployAscSettingsAzureMonitor](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsAzureMonitor.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsAzureMonitor.yml)
+
+[![deployAscSettingsDefenderForEndpoint](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsDefenderForEndpoint.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsDefenderForEndpoint.yml)
+
+[![deployAscSettingsVulnerabilityAssessment](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsVulnerabilityAssessment.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsVulnerabilityAssessment.yml)
+
+
 
 ---
 

@@ -1,4 +1,4 @@
-name: manage-azure-policy-d45ec993
+name: deployAscSettingsSecurityMonitoringAgents
 on:
   workflow_dispatch:
     inputs:
