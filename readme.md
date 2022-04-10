@@ -10,22 +10,27 @@ This repository includes the tools and documentation to use automation to manage
 
 [![deployAscSettingsAzureMonitor](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsAzureMonitor.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsAzureMonitor.yml)
 
+[![deployAscSettingsVulnerabilityAssessment](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsVulnerabilityAssessment.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsVulnerabilityAssessment.yml)
+
 [![deployAscSettingsDefenderForEndpoint](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsDefenderForEndpoint.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsDefenderForEndpoint.yml)
 
 [![deployAscSettingsVulnerabilityAssessment](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsVulnerabilityAssessment.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsVulnerabilityAssessment.yml)
 
 
 
----
 
-## PowerShell Script
+
+
+# Setting Pricing Value for Defender for Cloud
+
+## Using PowerShell Script
 
 ```powershell
 Set-AzSecurityPricing -Name "virtualmachines" -PricingTier "Standard"
 ```
 ---
 
-## Enable Using an ARM Template 
+## Using an ARM Template 
 Reource provider: [Microsoft.Security/pricings](https://docs.microsoft.com/en-us/azure/templates/microsoft.security/pricings?tabs=json)
 
 ```json
@@ -52,8 +57,8 @@ Reource provider: [Microsoft.Security/pricings](https://docs.microsoft.com/en-us
     "outputs": {}
 }
 ```
----
-## Azure Policy
+
+## Using Azure Policy
 Using a built-in Azure Policy initiative that can be assigned at any scope within Azure that the role assignment permits. This can assigned within the Policy management blade in the Azure Portal, or using source control and automation.
 
 Original built-in policy set:
@@ -74,9 +79,9 @@ Policy initiative deploying the agent to all image types (you may deploy the pol
 
 - [[Preview]: [Preview]: Deploy Microsoft Defender for Endpoint agent on Windows virtual machines](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1ec9c2c2-6d64-656d-6465-3ec3309b8579)
 
----
 
-## Assign Policy Portal Experience
+
+## Using the Policy Portal Experience
 Navigate to: https://portal.azure.com
 
 - Type "policy" in the portal search box
@@ -88,6 +93,9 @@ Navigate to: https://portal.azure.com
 - Follow wizard to deploy to your desired scope
 
 ![Policy Assignment Screen Shot](images\policy-initiative-assignment.jpg)
+
+# Deploy Log Analytics Agent on Azure VMs
+This will automatically on-boards Azure VMs by installing the Azure Log Analytics Agent
 
 
 

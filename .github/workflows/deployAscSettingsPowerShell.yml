@@ -1,4 +1,4 @@
-name: DeployASCPricingUsingPowerShell
+name: deployAscSettingsPowerShell
 
 on:
   push:
