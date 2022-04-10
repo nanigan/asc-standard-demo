@@ -1,4 +1,4 @@
-name: DeployLogicApp-Outlook-SharePoint-SQL
+name: Deploy Defender ARM Template
 
 on:
   push:
