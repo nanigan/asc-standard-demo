@@ -1,4 +1,4 @@
-name: manage-azure-policy-fd93d1f1
+name: Deploy_Defender_for_Endpoint_Agent 
 on:
   workflow_dispatch:
     inputs:
@@ -29,4 +29,4 @@ jobs:
       uses: azure/manage-azure-policy@v0
       with:
         paths: |
-          initiatives/Deploy_Defender_for_Endpoint_Agent_a24fc5877032404d9f2716f2/**
+          initiatives/Deploy_Defender_for_Endpoint_Agent/**
