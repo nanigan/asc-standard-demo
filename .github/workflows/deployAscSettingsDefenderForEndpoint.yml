@@ -1,4 +1,4 @@
-name: Deploy_Defender_for_Endpoint_Agent 
+name: deployAscSettingsDefenderForEndpoint
 on:
   workflow_dispatch:
     inputs:
