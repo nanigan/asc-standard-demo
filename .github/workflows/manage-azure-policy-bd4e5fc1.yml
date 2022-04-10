@@ -1,0 +1,32 @@
+name: manage-azure-policy-bd4e5fc1
+on:
+  workflow_dispatch:
+    inputs:
+      remarks:
+        description: 'Reason for triggering the workflow run'
+        required: false
+        default: 'Updating Azure Policies'
+
+
+## Uncomment the following if you wish to automatically trigger workflow run with every commit
+#
+#  push:
+#    paths:
+#      - 'policies/_Preview_Configure_machines_to_receive_a_vulnerability_assessment_provider_13ce0167-8ca6-4048-8e6b-f996402e3c1b/**'
+#      - .github/workflows/manage-azure-policy-bd4e5fc1.yml
+jobs:
+  apply-azure-policy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS_bd4e5fc1}}
+        allow-no-subscriptions: true
+    - name: Create or Update Azure Policies
+      uses: azure/manage-azure-policy@v0
+      with:
+        paths: |
+          policies/_Preview_Configure_machines_to_receive_a_vulnerability_assessment_provider_13ce0167-8ca6-4048-8e6b-f996402e3c1b/**
