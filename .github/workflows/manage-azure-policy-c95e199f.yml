@@ -30,5 +30,4 @@ jobs:
       uses: azure/manage-azure-policy@v0
       with:
         paths: |
-          policies/Configure_Azure_Defender_for_servers_to_be_enabled_8e86a5b6-b9bd-49d1-8e21-4bb8a0862222/**
           initiatives/_Preview_Deploy_Microsoft_Defender_for_Endpoint_agent_e20d08c5-6d64-656d-6465-ce9e37fd0ebc/**
