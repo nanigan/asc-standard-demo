@@ -44,5 +44,3 @@ jobs:
       shell: pwsh
       run: |
         .\PowerShell\deployToSub.ps1
-        azPSVersion: 
-          latest

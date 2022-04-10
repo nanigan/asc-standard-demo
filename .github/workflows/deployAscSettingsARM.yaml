@@ -28,6 +28,7 @@ jobs:
       with:
         inlineScript: 
           New-AzDeployment -Location "eastus2" -TemplateFile .\ARM-DEPLOYMENT\azuredeploy.json
+        azPSVersion: 
           latest
         failOnStandardError: false
         githubToken: ${{ github.token }}
