@@ -1,0 +1,32 @@
+name: Configure_machines_to_automatically_install_the_Azure_Monitor_and_Azure_Security_agents_on_virtual_machines
+on:
+  workflow_dispatch:
+    inputs:
+      remarks:
+        description: 'Reason for triggering the workflow run'
+        required: false
+        default: 'Updating Azure Policies'
+
+
+## Uncomment the following if you wish to automatically trigger workflow run with every commit
+#
+#  push:
+#    paths:
+#      - 'initiatives/_Preview_Configure_machines_to_automatically_install_the_Azure_Monitor_and_Azure_Security_agents_on_virtual_machines_a15f3269-2e10-458c-87a4-d5989e678a73/**'
+#      - .github/workflows/manage-azure-policy-d45ec993.yml
+jobs:
+  apply-azure-policy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS_d45ec993}}
+        allow-no-subscriptions: true
+    - name: Create or Update Azure Policies
+      uses: azure/manage-azure-policy@v0
+      with:
+        paths: |
+          initiatives/Configure_machines_to_automatically_install_the_Azure_Monitor_and_Azure_Security_agents_on_virtual_machines/**
