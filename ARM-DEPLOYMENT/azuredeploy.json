@@ -10,7 +10,7 @@
     "resources": [
         {
             "type": "Microsoft.Security/pricings",
-            "apiVersion": "2017-08-01-preview",
+            "apiVersion": "2018-06-01",
             "name": "VirtualMachines",
             "properties": {
                 "pricingTier": "[parameters('pricingTierVMs')]"
