@@ -1,4 +1,4 @@
-name: Deploy Defender ARM Template
+name: DeployASCPricingUsingARM
 
 on:
   push:
