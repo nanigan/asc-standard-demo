@@ -1,4 +1,4 @@
-name: Configure_machines_to_automatically_install_the_Azure_Monitor_and_Azure_Security_agents_on_virtual_machines
+name: deployAscSettingsAzureMonitor
 on:
   workflow_dispatch:
     inputs:
