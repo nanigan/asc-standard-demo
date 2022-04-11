@@ -4,25 +4,7 @@ This repository includes the tools and documentation to use automation to manage
 
 ---
 
-[![armDeployAscSettings](https://github.com/nanigan/asc-standard-demo/actions/workflows/armDeployAscSettings.yaml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/armDeployAscSettings.yaml)
-
-
-[![policyDeployAscSettingsAzureMonitor](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsAzureMonitor.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsAzureMonitor.yml)
-
-
-[![policyDeployAscSettingsDefenderForEndpoint](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsDefenderForEndpoint.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsDefenderForEndpoint.yml)
-
-
-[![policyDeployAscSettingsDeployDefender](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsDeployDefender.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsDeployDefender.yml)
-
-
-[![policyDeployAscSettingsSecurityMonitoringAgents](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsSecurityMonitoringAgents.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsSecurityMonitoringAgents.yml)
-
-
 [![policyDeployAscSettingsVulnerabilityAssessment](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsVulnerabilityAssessment.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsVulnerabilityAssessment.yml)
-
-
-[![powerShellDeployAscPricingSetting](https://github.com/nanigan/asc-standard-demo/actions/workflows/powerShellDeployAscPricingSetting.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/powerShellDeployAscPricingSetting.yml)
 
 ---
 
