@@ -28,30 +28,51 @@ Set-AzSecurityPricing -Name "virtualmachines" -PricingTier "Standard"
 ---
 
 ## Using an ARM Template 
-Reource provider: [Microsoft.Security/pricings](https://docs.microsoft.com/en-us/azure/templates/microsoft.security/pricings?tabs=json)
+Reource provider: [Microsoft.Security/pricings](https://docs.microsoft.com/en-us/azure/templates/microsoft.security/pricings?tabs=json) This template will also auto-provisioning security settings.
 
 ```json
 {
- "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "pricingTierVMs": {
             "type": "string",
             "defaultValue": "Standard"
+        },
+        "autoProvisioning": {
+            "type": "string",
+            "defaultValue": "on"
         }
     },
     "resources": [
         {
-            "type": "Microsoft.Security/pricings",
+            "type": "Microsoft.Security/autoProvisioningSettings",
+            "name": "default",
             "apiVersion": "2017-08-01-preview",
+            "properties": {
+                "autoProvision": "[parameters('autoProvisioning')]"
+            }
+        },
+        {
+            "type": "Microsoft.Security/workspaceSettings",
+            "apiVersion": "2017-08-01-preview",
+            "name": "default",
+            "properties": {
+                "workspaceId": "/subscriptions/805b1035-89ad-44e4-9f1d-d27d67305a2b/resourcegroups/rg-demo-resources/providers/microsoft.operationalinsights/workspaces/sneff-law",
+                "scope": "[subscription().id]"
+            }
+        },
+        {
+            "type": "Microsoft.Security/pricings",
+            "apiVersion": "2018-06-01",
             "name": "VirtualMachines",
-            "properties":{
+            "properties": {
                 "pricingTier": "[parameters('pricingTierVMs')]"
             }
-        }      
-        
+        }
     ],
-    "outputs": {}
+    "outputs": {
+    }
 }
 ```
 
