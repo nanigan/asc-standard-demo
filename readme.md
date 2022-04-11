@@ -2,21 +2,19 @@
 
 This repository includes the tools and documentation to use automation to manage your enterprise Microsoft Defender feature enablement.
 
-[![deployAscSettingsARM](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsARM.yaml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsARM.yaml)
+[![armDeployAscSettings](https://github.com/nanigan/asc-standard-demo/actions/workflows/armDeployAscSettings.yaml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/armDeployAscSettings.yaml)
 
-[![deployAscSettingsAzureMonitor](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsAzureMonitor.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsAzureMonitor.yml)
+[![policyDeployAscSettingsAzureMonitor](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsAzureMonitor.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsAzureMonitor.yml)
 
-[![deployAscSettingsAzurePolicySet](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsAzurePolicySet.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsAzurePolicySet.yml)
+[![policyDeployAscSettingsDefenderForEndpoint](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsDefenderForEndpoint.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsDefenderForEndpoint.yml)
 
-[![deployAscSettingsDefenderForEndpoint](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsDefenderForEndpoint.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsDefenderForEndpoint.yml)
+[![policyDeployAscSettingsDeployDefender](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsDeployDefender.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsDeployDefender.yml)
 
-[![deployAscSettingsPowerShell](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsPowerShell.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsPowerShell.yml)
+[![policyDeployAscSettingsSecurityMonitoringAgents](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsSecurityMonitoringAgents.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsSecurityMonitoringAgents.yml)
 
-[![deployAscSettingsSecurityMonitoringAgents](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsSecurityMonitoringAgents.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsSecurityMonitoringAgents.yml)
+[![policyDeployAscSettingsVulnerabilityAssessment](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsVulnerabilityAssessment.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsVulnerabilityAssessment.yml)
 
-[![deployAscSettingsVulnerabilityAssessment](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsVulnerabilityAssessment.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/deployAscSettingsVulnerabilityAssessment.yml)
-
-
+[![powerShellDeployAscPricingSetting](https://github.com/nanigan/asc-standard-demo/actions/workflows/powerShellDeployAscPricingSetting.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/powerShellDeployAscPricingSetting.yml)
 
 # Setting Pricing Value for Defender for Cloud
 
