@@ -2,9 +2,6 @@
 
 This repository includes the tools and documentation to use automation to manage your enterprise Microsoft Defender feature enablement.
 
-[![Arm Deployment of ASC Settings](https://github.com/nanigan/ASC-STANDARD-DEMO/actions/workflows/login.yaml/badge.svg)](https://github.com/nanigan/ASC-STANDARD-DEMO/actions/workflows/armDeployAscSettings.yaml)
-
-
 ---
 
 ## Setting Pricing Value for Defender for Cloud
