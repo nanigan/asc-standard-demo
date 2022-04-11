@@ -96,12 +96,3 @@ This will automatically on-boards Azure VMs by installing the Azure Log Analytic
 
 
 
-Solution requirements
-
-PowerShell Requirements:
-Az
-Az.Security
-
-Azure requirements:
-Service Principal with the least priveledged role: "Resource Policy Contributor" Other built-in roles with the Microsoft.Authorization and Microsoft.PolicyInsights operations. See: https://docs.microsoft.com/en-us/azure/governance/policy/overview#azure-rbac-permissions-in-azure-policy
-
