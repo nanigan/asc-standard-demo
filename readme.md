@@ -1,47 +1,45 @@
-# Enable Defender for Endpoint
+# Configure the automated deployment of Defender for endpoint
 
 This repository includes the tools and documentation to use automation to manage your enterprise Microsoft Defender feature enablement.
 
+---
+
 [![armDeployAscSettings](https://github.com/nanigan/asc-standard-demo/actions/workflows/armDeployAscSettings.yaml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/armDeployAscSettings.yaml)
+
 
 [![policyDeployAscSettingsAzureMonitor](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsAzureMonitor.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsAzureMonitor.yml)
 
+
 [![policyDeployAscSettingsDefenderForEndpoint](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsDefenderForEndpoint.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsDefenderForEndpoint.yml)
+
 
 [![policyDeployAscSettingsDeployDefender](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsDeployDefender.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsDeployDefender.yml)
 
+
 [![policyDeployAscSettingsSecurityMonitoringAgents](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsSecurityMonitoringAgents.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsSecurityMonitoringAgents.yml)
+
 
 [![policyDeployAscSettingsVulnerabilityAssessment](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsVulnerabilityAssessment.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/policyDeployAscSettingsVulnerabilityAssessment.yml)
 
+
 [![powerShellDeployAscPricingSetting](https://github.com/nanigan/asc-standard-demo/actions/workflows/powerShellDeployAscPricingSetting.yml/badge.svg)](https://github.com/nanigan/asc-standard-demo/actions/workflows/powerShellDeployAscPricingSetting.yml)
 
-# Setting Pricing Value for Defender for Cloud
+---
 
-## Using PowerShell Script
+## Setting Pricing Value for Defender for Cloud
+
+### Using PowerShell Script
 
 ```powershell
 Set-AzSecurityPricing -Name "virtualmachines" -PricingTier "Standard"
 ```
 ---
 
-## Using an ARM Template 
+### Using an ARM Template 
 Reource provider: [Microsoft.Security/pricings](https://docs.microsoft.com/en-us/azure/templates/microsoft.security/pricings?tabs=json) This template will also auto-provisioning security settings.
 
+Excerpt:
 ```json
-{
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "pricingTierVMs": {
-            "type": "string",
-            "defaultValue": "Standard"
-        },
-        "autoProvisioning": {
-            "type": "string",
-            "defaultValue": "on"
-        }
-    },
     "resources": [
         {
             "type": "Microsoft.Security/autoProvisioningSettings",
@@ -56,7 +54,7 @@ Reource provider: [Microsoft.Security/pricings](https://docs.microsoft.com/en-us
             "apiVersion": "2017-08-01-preview",
             "name": "default",
             "properties": {
-                "workspaceId": "/subscriptions/805b1035-89ad-44e4-9f1d-d27d67305a2b/resourcegroups/rg-demo-resources/providers/microsoft.operationalinsights/workspaces/sneff-law",
+                "workspaceId": "/subscriptions/,<your subscription ID>,/resourcegroups/<your resource group name>/providers/microsoft.operationalinsights/workspaces/<workspace name>",
                 "scope": "[subscription().id]"
             }
         },
@@ -68,13 +66,11 @@ Reource provider: [Microsoft.Security/pricings](https://docs.microsoft.com/en-us
                 "pricingTier": "[parameters('pricingTierVMs')]"
             }
         }
-    ],
-    "outputs": {
-    }
-}
+    ]...  
 ```
+---
 
-## Using Azure Policy
+### Using Azure Policy
 Using a built-in Azure Policy initiative that can be assigned at any scope within Azure that the role assignment permits. This can assigned within the Policy management blade in the Azure Portal, or using source control and automation.
 
 Original built-in policy set:
@@ -95,9 +91,9 @@ Policy initiative deploying the agent to all image types (you may deploy the pol
 
 - [[Preview]: [Preview]: Deploy Microsoft Defender for Endpoint agent on Windows virtual machines](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1ec9c2c2-6d64-656d-6465-3ec3309b8579)
 
+---
 
-
-## Using the Policy Portal Experience
+### Using the Policy Portal Experience
 Navigate to: https://portal.azure.com
 
 - Type "policy" in the portal search box
@@ -110,8 +106,44 @@ Navigate to: https://portal.azure.com
 
 ![Policy Assignment Screen Shot](images/policy-initiative-assignment.jpg)
 
-# Deploy Log Analytics Agent on Azure VMs
-This will automatically on-boards Azure VMs by installing the Azure Log Analytics Agent
+---
+
+### Deploy Log Analytics Agent on Azure VMs
+This will automatically on-boards Azure VMs by installing the Azure Log Analytics Agent using the built-in Azure Policy "[Preview]: Configure machines to automatically install the Azure Monitor and Azure Security agents on virtual machines"
+
+
+```json
+{
+ "properties": {
+  "displayName": "[Preview]: Configure machines to automatically install the Azure Monitor and Azure Security agents on virtual machines",
+  "policyType": "BuiltIn",
+  "description": "Configure machines to automatically install the Azure Monitor and Azure Security agents. Security Center collects events from the agents and uses them to provide security alerts and tailored hardening tasks (recommendations). Create a resource group and Log Analytics workspace in the same region as the machine to store audit records. This policy only applies to VMs in a few regions.",
+  "metadata": {
+   "category": "Monitoring",
+   "version": "3.0.0-preview",
+   "preview": true
+  }...
+```
+---
+
+## Deploy Vulnerability Assessment
+This automatically installs the Vulnerability (Qualys) using the build in Azure Policy initiative "[Preview]: Configure machines to automatically install the Azure Monitor and Azure Security agents on virtual machines"
+
+Excerpt:
+```json
+{
+ "properties": {
+  "displayName": "[Preview]: Configure machines to automatically install the Azure Monitor and Azure Security agents on virtual machines",
+  "policyType": "BuiltIn",
+  "description": "Configure machines to automatically install the Azure Monitor and Azure Security agents. Security Center collects events from the agents and uses them to provide security alerts and tailored hardening tasks (recommendations). Create a resource group and Log Analytics workspace in the same region as the machine to store audit records. This policy only applies to VMs in a few regions.",
+  "metadata": {
+   "category": "Monitoring",
+   "version": "3.0.0-preview",
+   "preview": true
+  },
+  ...
+  ```
+
 
 
 
