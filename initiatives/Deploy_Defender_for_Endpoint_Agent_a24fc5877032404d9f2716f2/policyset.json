@@ -1,0 +1,123 @@
+{
+ "properties": {
+  "displayName": "Deploy Defender for Endpoint Agent",
+  "policyType": "Custom",
+  "description": "Deploy Microsoft Defender for Endpoint agent on applicable images.",
+  "metadata": {
+   "category": "Security Center",
+   "version": "1.0.0-preview",
+   "preview": true,
+   "createdBy": "53c9fae7-6c83-4e9c-aa92-4e1c266eddc3",
+   "createdOn": "2022-04-10T16:34:10.3160675Z",
+   "updatedBy": "2c11a07e-38a2-4975-8288-dd28c4c8bf08",
+   "updatedOn": "2022-04-10T17:24:17.9946378Z",
+   "gitHubPolicy": {
+    "digest": "707150ec1be1434589c0e326be0444bcfe5be4f0",
+    "repoName": "nanigan/asc-standard-demo",
+    "commitSha": "4250db0a9f285c57a98acf3adb19124e31478858",
+    "runUrl": "https://github.com/nanigan/asc-standard-demo/actions/runs/2144603518",
+    "filepath": "initiatives/Deploy_Defender_for_Endpoint_Agent_a24fc5877032404d9f2716f2"
+   }
+  },
+  "parameters": {
+   "microsoftDefenderForEndpointWindowsVmAgentDeployEffect": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Deploy Microsoft Defender for Endpoint agent on Windows virtual machines",
+     "description": "Enable or disable deploy Microsoft Defender for Endpoint agent on Windows virtual machines."
+    },
+    "allowedValues": [
+     "AuditIfNotExists",
+     "DeployIfNotExists",
+     "Disabled"
+    ],
+    "defaultValue": "DeployIfNotExists"
+   },
+   "microsoftDefenderForEndpointLinuxVmAgentDeployEffect": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Deploy Microsoft Defender for Endpoint agent on Linux virtual machines",
+     "description": "Enable or disable deploy Microsoft Defender for Endpoint agent on Linux virtual machines."
+    },
+    "allowedValues": [
+     "AuditIfNotExists",
+     "DeployIfNotExists",
+     "Disabled"
+    ],
+    "defaultValue": "DeployIfNotExists"
+   },
+   "microsoftDefenderForEndpointWindowsArcAgentDeployEffect": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Deploy Microsoft Defender for Endpoint agent on hybrid Windows virtual machines",
+     "description": "Enable or disable deploy Microsoft Defender for Endpoint agent on hybrid Windows virtual machines."
+    },
+    "allowedValues": [
+     "AuditIfNotExists",
+     "DeployIfNotExists",
+     "Disabled"
+    ],
+    "defaultValue": "DeployIfNotExists"
+   },
+   "microsoftDefenderForEndpointLinuxArcAgentDeployEffect": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Deploy Microsoft Defender for Endpoint agent on hybrid Linux virtual machines",
+     "description": "Enable or disable deploy Microsoft Defender for Endpoint agent on hybrid Linux virtual machines."
+    },
+    "allowedValues": [
+     "AuditIfNotExists",
+     "DeployIfNotExists",
+     "Disabled"
+    ],
+    "defaultValue": "DeployIfNotExists"
+   }
+  },
+  "policyDefinitions": [
+   {
+    "policyDefinitionReferenceId": "microsoftDefenderForEndpointWindowsAgentDeploy",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1ec9c2c2-6d64-656d-6465-3ec3309b8579",
+    "parameters": {
+     "effect": {
+      "value": "[parameters('microsoftDefenderForEndpointWindowsVmAgentDeployEffect')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "microsoftDefenderForEndpointLinuxAgentDeploy",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/d30025d0-6d64-656d-6465-67688881b632",
+    "parameters": {
+     "effect": {
+      "value": "[parameters('microsoftDefenderForEndpointLinuxVmAgentDeployEffect')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "microsoftDefenderForEndpointWindowsArcAgentDeploy",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/37c043a6-6d64-656d-6465-b362dfeb354a",
+    "parameters": {
+     "effect": {
+      "value": "[parameters('microsoftDefenderForEndpointWindowsArcAgentDeployEffect')]"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "microsoftDefenderForEndpointLinuxArcAgentDeploy",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/4eb909e7-6d64-656d-6465-2eeb297a1625",
+    "parameters": {
+     "effect": {
+      "value": "[parameters('microsoftDefenderForEndpointLinuxArcAgentDeployEffect')]"
+     }
+    },
+    "groupNames": []
+   }
+  ],
+  "policyDefinitionGroups": []
+ },
+ "id": "/subscriptions/805b1035-89ad-44e4-9f1d-d27d67305a2b/providers/Microsoft.Authorization/policySetDefinitions/a24fc5877032404d9f2716f2",
+ "type": "Microsoft.Authorization/policySetDefinitions",
+ "name": "a24fc5877032404d9f2716f2"
+}

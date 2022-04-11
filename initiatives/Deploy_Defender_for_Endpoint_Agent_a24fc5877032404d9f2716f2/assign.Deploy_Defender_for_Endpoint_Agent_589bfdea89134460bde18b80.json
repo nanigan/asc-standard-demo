@@ -1,0 +1,31 @@
+{
+ "sku": {
+  "name": "A0",
+  "tier": "Free"
+ },
+ "identity": {
+  "principalId": "2dde00f6-2046-4fbe-b54b-994404e3836d",
+  "tenantId": "bb05393c-719a-4329-8aed-5ee4415ac144",
+  "type": "SystemAssigned"
+ },
+ "properties": {
+  "displayName": "Deploy Defender for Endpoint Agent",
+  "policyDefinitionId": "/subscriptions/805b1035-89ad-44e4-9f1d-d27d67305a2b/providers/Microsoft.Authorization/policySetDefinitions/a24fc5877032404d9f2716f2",
+  "scope": "/subscriptions/805b1035-89ad-44e4-9f1d-d27d67305a2b",
+  "notScopes": [],
+  "parameters": {},
+  "metadata": {
+   "assignedBy": "Shane Neff",
+   "parameterScopes": {},
+   "createdBy": "53c9fae7-6c83-4e9c-aa92-4e1c266eddc3",
+   "createdOn": "2022-04-11T10:48:17.5342388Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "enforcementMode": "Default"
+ },
+ "id": "/subscriptions/805b1035-89ad-44e4-9f1d-d27d67305a2b/providers/Microsoft.Authorization/policyAssignments/589bfdea89134460bde18b80",
+ "type": "Microsoft.Authorization/policyAssignments",
+ "name": "589bfdea89134460bde18b80",
+ "location": "eastus2"
+}
