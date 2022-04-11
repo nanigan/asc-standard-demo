@@ -1,4 +1,4 @@
-name: deployAscSettingsAzureMonitor
+name: policyDeployAscSettingsSecurityMonitoringAgents
 on:
   workflow_dispatch:
     inputs:
@@ -29,4 +29,4 @@ jobs:
       uses: azure/manage-azure-policy@v0
       with:
         paths: |
-          initiatives/Configure_machines_to_automatically_install_the_Azure_Monitor_and_Azure_Security_agents_on_virtual_machines/**
+          initiatives/_Preview_Configure_machines_to_automatically_install_the_Azure_Monitor_and_Azure_Security_agents_on_virtual_machines/**

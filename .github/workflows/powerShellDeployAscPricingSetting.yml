@@ -1,4 +1,4 @@
-name: deployAscSettingsARM
+name: powerShellDeployAscPricingSetting
 
 on:
   push:
@@ -27,9 +27,11 @@ jobs:
       uses: Azure/powershell@v1
       with:
         inlineScript: 
-          New-AzDeployment -Location "eastus2" -TemplateFile .\arm\azuredeploy.json
+          Install-Module -Name "Az.Security" -Force -AllowClobber
         azPSVersion: 
           latest
-        failOnStandardError: false
-        githubToken: ${{ github.token }}
 
+    - name: Azure PowerShell Action
+      shell: pwsh
+      run: |
+        .\PowerShell\deployToSub.ps1

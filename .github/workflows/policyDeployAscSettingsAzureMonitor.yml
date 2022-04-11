@@ -1,4 +1,4 @@
-name: manage-azure-policy-1fec7e6f
+name: policyDeployAscSettingsAzureMonitor
 on:
   workflow_dispatch:
     inputs:
@@ -6,6 +6,7 @@ on:
         description: 'Reason for triggering the workflow run'
         required: false
         default: 'Updating Azure Policies'
+
 
 jobs:
   apply-azure-policy:
@@ -16,10 +17,10 @@ jobs:
     - name: Login to Azure
       uses: azure/login@v1
       with:
-        creds: ${{secrets.AZURE_CREDENTIALS_1fec7e6f}}
+        creds: ${{secrets.AZURE_CREDENTIALS_d45ec993}}
         allow-no-subscriptions: true
     - name: Create or Update Azure Policies
       uses: azure/manage-azure-policy@v0
       with:
         paths: |
-          initiatives/Deploy_Defender_for_Endpoint_Agent/**
+          initiatives/Configure_machines_to_automatically_install_the_Azure_Monitor_and_Azure_Security_agents_on_virtual_machines/**
