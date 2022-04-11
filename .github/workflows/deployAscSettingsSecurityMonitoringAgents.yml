@@ -29,4 +29,4 @@ jobs:
       uses: azure/manage-azure-policy@v0
       with:
         paths: |
-          initiatives/_Preview_Configure_machines_to_automatically_install_the_Azure_Monitor_and_Azure_Security_agents_on_virtual_machines_a15f3269-2e10-458c-87a4-d5989e678a73/**
+          initiatives/_Preview_Configure_machines_to_automatically_install_the_Azure_Monitor_and_Azure_Security_agents_on_virtual_machines/**
