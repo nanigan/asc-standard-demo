@@ -108,7 +108,7 @@ Navigate to: https://portal.azure.com
 - Select the "Assign" button to assign the policy
 - Follow wizard to deploy to your desired scope
 
-![Policy Assignment Screen Shot](images\policy-initiative-assignment.jpg)
+![Policy Assignment Screen Shot](images/policy-initiative-assignment.jpg)
 
 # Deploy Log Analytics Agent on Azure VMs
 This will automatically on-boards Azure VMs by installing the Azure Log Analytics Agent
