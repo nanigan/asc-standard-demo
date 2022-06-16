@@ -1,0 +1,66 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "pricingTierVMs": {
+            "type": "string",
+            "defaultValue": "Standard"
+        },
+        "autoProvisioning": {
+            "type": "string",
+            "defaultValue": "on"
+        },
+        "emailSecurityContact": {
+            "type": "string",
+            "defaultValue": "shane.neff@shane.com"
+        }
+    },
+    "resources": [
+        {
+            "condition": "[not(empty(parameters('emailSecurityContact')))]",
+            "type": "Microsoft.Security/securityContacts",
+            "name": "default",
+            "apiVersion": "2020-01-01-preview",
+            "properties": {
+                "emails": "[parameters('emailSecurityContact')]",
+                "notificationsByRole": {
+                    "state": "On",
+                    "roles": [
+                        "Owner"
+                    ]
+                },
+                "alertNotifications": {
+                    "state": "On",
+                    "minimalSeverity": "High"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Security/autoProvisioningSettings",
+            "name": "default",
+            "apiVersion": "2017-08-01-preview",
+            "properties": {
+                "autoProvision": "[parameters('autoProvisioning')]"
+            }
+        },
+        {
+            "type": "Microsoft.Security/workspaceSettings",
+            "apiVersion": "2017-08-01-preview",
+            "name": "default",
+            "properties": {
+                "workspaceId": "/subscriptions/805b1035-89ad-44e4-9f1d-d27d67305a2b/resourcegroups/RG-LOGGING/providers/microsoft.operationalinsights/workspaces/sneff-law",
+                "scope": "[subscription().id]"
+            }
+        },
+        {
+            "type": "Microsoft.Security/pricings",
+            "apiVersion": "2018-06-01",
+            "name": "VirtualMachines",
+            "properties": {
+                "pricingTier": "[parameters('pricingTierVMs')]"
+            }
+        }
+    ],
+    "outputs": {
+    }
+}
