@@ -51,6 +51,14 @@
                 "workspaceId": "/subscriptions/805b1035-89ad-44e4-9f1d-d27d67305a2b/resourcegroups/RG-LOGGING/providers/microsoft.operationalinsights/workspaces/sneff-law",
                 "scope": "[subscription().id]"
             }
+        },
+        {
+            "type": "Microsoft.Security/pricings",
+            "apiVersion": "2018-06-01",
+            "name": "VirtualMachines",
+            "properties": {
+                "pricingTier": "[parameters('pricingTierVMs')]"
+            }
         }
     ],
     "outputs": {
